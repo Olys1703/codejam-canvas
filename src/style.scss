@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main {
+    margin: auto;
+    width: 100%;
+}
+.canvas-wrapper {
+    margin: auto;
+    position: relative;
+    top: 300px;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    //height: 500px;
+    //width: 500px;
+    background-color: gray;
+}
+#canvas {
+    display: inline-block;
+    text-align: center;
+    //height: 100px;
+    //width: 100px;
+}
