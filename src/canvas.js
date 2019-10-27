@@ -6241,12 +6241,12 @@ function drow32x32 (arr) {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
 
-
+    let scale = 16
     for (let i = 0; i < arr.length; i++){
         for(let j = 0; j < arr[i].length; j++) {
-            let boxColor = 'rgba(' + arr[i][j][0] +','+arr[i][j][1]+','+arr[i][j][2]+','+arr[i][j][3];
+            let boxColor = 'rgba(' + arr[i][j][0] +','+arr[i][j][1]+','+arr[i][j][2]/*+','+arr[i][j][3]/255*/;
             ctx.fillStyle = boxColor;
-            ctx.fillRect(i*5, j*5, 5, 5);
+            ctx.fillRect(i*scale, j*scale, scale, scale);
         }
     }
     //ctx.fillStyle = "green";
