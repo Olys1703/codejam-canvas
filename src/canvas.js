@@ -6216,40 +6216,60 @@ const codewars32x32 = [
   ];
 
 
-drow32x32(codewars32x32);
 
 
-function drow4x4 (arr) {
+
+document.getElementById('canvas4x4').addEventListener('click', {handleEvent(event){ drow4x4(sun4x4, 128); }});
+document.getElementById('canvas32x32').addEventListener('click', {handleEvent(event){ drow32x32(codewars32x32, 16); }});
+document.getElementById('canvasimage').addEventListener('click', {handleEvent(event){ imgcanvas(); }});
+
+
+
+function imgcanvas () {
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var image = document.getElementById('rss');
+ctx.drawImage(image, 0, 0, 512, 512);
+}
+
+
+
+
+function drow4x4 (arr,scale) {
 
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
 
+    const context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < arr.length; i++){
         for(let j = 0; j < arr[i].length; j++) {
             let boxColor = '#' + arr[i][j];
-            ctx.fillStyle = boxColor;
-            ctx.fillRect(i*100, j*100, 100, 100);
-        }
-    }
-    //ctx.fillStyle = "green";
-    //ctx.fillRect(10, 10, 100, 100);
-}
-
-function drow32x32 (arr) {
-
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-
-    let scale = 16
-    for (let i = 0; i < arr.length; i++){
-        for(let j = 0; j < arr[i].length; j++) {
-            let boxColor = 'rgba(' + arr[i][j][0] +','+arr[i][j][1]+','+arr[i][j][2]/*+','+arr[i][j][3]/255*/;
             ctx.fillStyle = boxColor;
             ctx.fillRect(i*scale, j*scale, scale, scale);
         }
     }
     //ctx.fillStyle = "green";
     //ctx.fillRect(10, 10, 100, 100);
+}
+
+function drow32x32 (arr, scale) {
+
+
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    const context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    
+    for (let i = 0; i < arr.length; i++){
+        for(let j = 0; j < arr[i].length; j++) {
+            let boxColor = 'rgba(' + arr[i][j][0] +','+arr[i][j][1]+','+arr[i][j][2]+','+arr[i][j][3]/255;
+            ctx.fillStyle = boxColor;
+            ctx.fillRect(i*scale, j*scale, scale, scale);
+        }
+    }
 }
 

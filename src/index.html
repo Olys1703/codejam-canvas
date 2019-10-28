@@ -19,13 +19,47 @@
         </nav>
     </header>
     <main class="main">
-        <span class="main-toolswrapper">
-            <ul class="main-tools">
-                <li class="tool"></li>
-                <li class="tool"></li>
-                <li class="tool"></li>
-                <li class="tool"></li>
-            </ul>
+        <span class="main-toolsmenu">
+                <span class="main-toolswrapper">
+                        <ul class="main-tools">
+                            <li class="main-tools--tool selected">
+                                <img src="./images/fill-drip.png" alt="Paint bucket">
+                                <p>Paint bucket</p>
+                            </li>
+                            <li class="main-tools--tool selected">
+                                <img src="./images/icon-upload.png" alt="Choose color">
+                                <p>Choose color</p>
+                            </li>
+                            <li class="main-tools--tool selected">
+                                <img src="./images/icon-copy.png" alt="Move">
+                                <p>Move</p>
+                            </li>
+                            <li class="main-tools--tool selected">
+                                <img src="./images/exchange-alt.png" alt="Transform">
+                                <p>Transform</p>
+                            </li>
+                        </ul>
+                </span>
+                <span class="main-palletwrapper">
+                    <ul class="main-pallet">
+                        <li class="main-pallet--list selected">
+                            <span id="currentcolor" class="circle"></span>
+                            <p>Current color</p>
+                        </li>
+                        <li class="main-pallet--list selected">
+                            <span id="prevcolor" class="circle"></span>
+                            <p>Prev color</p>
+                        </li>
+                        <li class="main-pallet--list selected">
+                            <span id="firstcolor" class="circle"></span>
+                            <p>red</p>
+                        </li>
+                        <li class="main-pallet--list selected">
+                            <span id="secondcolor" class="circle"></span>
+                            <p>blue</p>
+                        </li>
+                    </ul>
+                </span>
         </span>
         <span class="main-canvaswrapper">
             <canvas id="canvas" height="512px" width="512px">
@@ -34,11 +68,13 @@
         </span>
         <span class="main-change">
                 <ul class="main-change--list">
-                    <li class="4x4">Sun</li>
-                    <li class="32x32">Codewars</li>
-                    <li class="image">RSS</li>
+                    <li id="canvas4x4" class="selected">Sun</li>
+                    <li id="canvas32x32" class="selected">Codewars</li>
+                    <li id="canvasimage" class="selected">RSS</li>
                 </ul>
         </span>
+
+        <img id="rss" src="./images/image.png" alt="rss">
     </main>
 </body>
 </html>
